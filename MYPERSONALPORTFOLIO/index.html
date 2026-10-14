@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kaushaindra Kumar | Data Analyst Trainer &amp; Portfolio</title>
+  <meta name="description" content="Portfolio of Kaushaindra Kumar, Data Analyst Trainer at Technoglobe Rewari. Built as a teaching project for a Website Development Workshop." />
+
+  <!-- ================= GOOGLE FONTS =================
+       Space Grotesk  -> used for big headings (display font)
+       Inter          -> used for normal paragraph text (body font)
+       JetBrains Mono -> used for numbers, code-like text, labels (mono font)
+  ==================================================== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- ================= FONT AWESOME (icons) ================= -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- ================= AOS (scroll reveal animation library) ================= -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.css">
+
+  <!-- ================= OUR OWN STYLESHEETS ================= -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- =========================================================
+       1. LOADER
+       This is the first thing visitors see for a fraction of
+       a second while the page finishes loading.
+  ========================================================== -->
+  <div class="loader" id="loader">
+    <div class="loader-inner">
+      <div class="loader-bars">
+        <span></span><span></span><span></span><span></span><span></span>
+      </div>
+      <p class="loader-text">compiling<span class="loader-dots">...</span></p>
+    </div>
+  </div>
+
+  <!-- Scroll progress bar fixed at the very top of the page -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- Cursor glow that follows the mouse (desktop only, see script.js) -->
+  <div class="cursor-glow" id="cursorGlow"></div>
+
+  <!-- =========================================================
+       2. NAVBAR
+  ========================================================== -->
+  <header class="navbar" id="navbar">
+    <div class="container navbar-inner">
+      <!-- Replace with your own name / initials as logo -->
+      <a href="#home" class="logo">KK<span class="logo-dot">.</span></a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#home" class="nav-link active-link">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#qualifications" class="nav-link">Qualifications</a>
+        <a href="#experience" class="nav-link">Experience</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="navbar-actions">
+        <!-- Replace with your own resume file -->
+        <a href="resume/resume.pdf" download class="btn btn-outline btn-small">
+          <i class="fa-solid fa-download"></i> Resume
+        </a>
+        <button class="hamburger" id="hamburger" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================================
+       3. HERO SECTION
+  ========================================================== -->
+  <section class="hero" id="home">
+    <!-- decorative animated background: dot grid + glow blobs + line-chart squiggle -->
+    <div class="hero-bg">
+      <div class="grid-overlay"></div>
+      <div class="blob blob-blue"></div>
+      <div class="blob blob-cyan"></div>
+      <svg class="chart-line" viewBox="0 0 600 200" preserveAspectRatio="none">
+        <path id="chartPath" d="M0,150 C100,120 150,180 250,100 C350,20 400,140 500,60 C550,20 580,90 600,60" />
+      </svg>
+      <!-- Floating tech icons -->
+      <i class="fa-brands fa-html5 float-icon icon-1"></i>
+      <i class="fa-brands fa-css3-alt float-icon icon-2"></i>
+      <i class="fa-brands fa-js float-icon icon-3"></i>
+      <i class="fa-brands fa-python float-icon icon-4"></i>
+      <i class="fa-solid fa-chart-line float-icon icon-5"></i>
+      <i class="fa-solid fa-database float-icon icon-6"></i>
+    </div>
+
+    <div class="container hero-inner">
+      <div class="hero-text" data-aos="fade-right">
+        <p class="eyebrow"><span class="dot-live"></span> Available for internships &amp; freelance</p>
+        <h1 class="hero-heading">
+          Hi, I'm <span class="gradient-text">Kaushaindra Chaudhary</span>
+        </h1>
+        <h2 class="hero-typing">
+          I turn raw data into <span id="typedText" class="typed-text"></span><span class="cursor-blink">|</span>
+        </h2>
+        <!-- Replace this dummy description with your own -->
+        <p class="hero-desc">
+          Software Engineer at <strong>Technoglobe Rewari</strong>, based in Rewari, Haryana.
+          I teach students how to explore data, build dashboards, and turn numbers into
+          decisions — and I build clean, fast websites like this one along the way.
+        </p>
+        <div class="hero-buttons">
+          <a href="#contact" class="btn btn-primary">
+            <span>Hire Me</span> <i class="fa-solid fa-arrow-right"></i>
+          </a>
+          <a href="resume/resume.pdf" download class="btn btn-outline">
+            <i class="fa-solid fa-download"></i> Download Resume
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-image" data-aos="fade-left">
+        <div class="hero-photo-ring">
+          <!-- Replace profile image: put your photo at images/profile.jpg -->
+          <img src="https://placehold.co/420x420/0d1420/38bdf8?text=Photo" alt="Kaushaindra Chaudhary profile photo" class="hero-photo">
+        </div>
+        <div class="floating-card card-1">
+          <i class="fa-solid fa-chalkboard-user"></i>
+          <div><strong>3+ yrs</strong><span>Training Experience</span></div>
+        </div>
+        <div class="floating-card card-2">
+          <i class="fa-solid fa-users"></i>
+          <div><strong>300+</strong><span>Students Trained</span></div>
+        </div>
+      </div>
+    </div>
+
+    <a href="#about" class="scroll-indicator" aria-label="Scroll down">
+      <span></span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </a>
+  </section>
+
+  <!-- =========================================================
+       4. ABOUT SECTION
+  ========================================================== -->
+  <section class="section" id="about">
+    <div class="container">
+      <p class="section-eyebrow" data-aos="fade-up">About Me</p>
+      <h2 class="section-title" data-aos="fade-up">The person behind the dashboards</h2>
+
+      <div class="about-grid">
+        <div class="about-text" data-aos="fade-right">
+          <!-- Dummy text with comment so students can replace it -->
+          <!-- Replace with your own name -->
+          <p>
+            I'm <strong>Kaushaindra Chaudhary</strong>, a Software Engineer working at
+            <strong>Technoglobe Rewari</strong> in Rewari, Haryana. I help students go from
+            "what is a spreadsheet" to writing SQL queries, building Power BI dashboards,
+            and telling stories with Python.
+          </p>
+          <p>
+            Outside the classroom, I like breaking down complicated tools into small,
+            beginner-friendly steps — which is exactly what this website was built to do.
+            Every section here is a mini HTML/CSS/JS lesson in disguise.
+          </p>
+          <!-- Replace this paragraph with more about yourself -->
+          <p>
+            When I'm not teaching, you'll find me exploring new datasets, tinkering with
+            dashboards, or writing beginner tutorials for front-end development.
+          </p>
+        </div>
+
+        <div class="about-stats" data-aos="fade-left">
+          <div class="stat-card">
+            <i class="fa-solid fa-diagram-project"></i>
+            <h3 class="counter" data-target="24">0</h3>
+            <span>Projects</span>
+          </div>
+          <div class="stat-card">
+            <i class="fa-solid fa-briefcase"></i>
+            <h3 class="counter" data-target="3">0</h3>
+            <span>Years Experience</span>
+          </div>
+          <div class="stat-card">
+            <i class="fa-solid fa-face-smile"></i>
+            <h3 class="counter" data-target="300">0</h3>
+            <span>Happy Students</span>
+          </div>
+          <div class="stat-card">
+            <i class="fa-solid fa-certificate"></i>
+            <h3 class="counter" data-target="8">0</h3>
+            <span>Certificates</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       5. QUALIFICATION SECTION (Timeline)
+  ========================================================== -->
+  <section class="section section-alt" id="qualifications">
+    <div class="container">
+      <p class="section-eyebrow" data-aos="fade-up">Qualifications</p>
+      <h2 class="section-title" data-aos="fade-up">Education &amp; Certifications</h2>
+
+      <div class="timeline">
+        <!-- Replace each timeline item with your own qualification -->
+        <div class="timeline-item" data-aos="fade-up">
+          <div class="timeline-dot"><i class="fa-solid fa-graduation-cap"></i></div>
+          <div class="timeline-content">
+            <span class="timeline-year">2021</span>
+            <h3>B.Sc. in Computer Science</h3>
+            <p>Dummy University, Rewari — Focused on databases, statistics and programming fundamentals.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
+          <div class="timeline-dot"><i class="fa-solid fa-certificate"></i></div>
+          <div class="timeline-content">
+            <span class="timeline-year">2022</span>
+            <h3>Certified Data Analyst</h3>
+            <p>Dummy Certification Body — SQL, Excel, Power BI and Python for data analysis.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+          <div class="timeline-dot"><i class="fa-solid fa-chalkboard"></i></div>
+          <div class="timeline-content">
+            <span class="timeline-year">2023</span>
+            <h3>Train the Trainer Program</h3>
+            <p>Dummy Institute — Instructional design and classroom facilitation training.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item" data-aos="fade-up" data-aos-delay="300">
+          <div class="timeline-dot"><i class="fa-solid fa-laptop-code"></i></div>
+          <div class="timeline-content">
+            <span class="timeline-year">2024</span>
+            <h3>Advanced Web Development Training</h3>
+            <p>Dummy Academy — HTML, CSS, JavaScript and modern front-end workflows.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       6. EXPERIENCE SECTION (single premium card)
+  ========================================================== -->
+  <section class="section" id="experience">
+    <div class="container">
+      <p class="section-eyebrow" data-aos="fade-up">Experience</p>
+      <h2 class="section-title" data-aos="fade-up">Where I've worked</h2>
+
+      <!-- Replace this card with your own internship / job details -->
+      <div class="experience-card glass" data-aos="zoom-in">
+        <div class="experience-card-icon">
+          <i class="fa-solid fa-chart-line"></i>
+        </div>
+        <div class="experience-card-body">
+          <div class="experience-card-top">
+            <div>
+              <h3>Data Analyst Intern</h3>
+              <p class="experience-company">Dummy Analytics Pvt. Ltd.</p>
+            </div>
+            <span class="experience-duration">Jan 2023 – Jun 2023</span>
+          </div>
+          <ul class="experience-list">
+            <li>Cleaned and analyzed sales datasets using Python and SQL.</li>
+            <li>Built interactive dashboards in Power BI for the marketing team.</li>
+            <li>Automated weekly reports, saving the team several hours every week.</li>
+            <li>Presented insights to stakeholders in simple, non-technical language.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       7. PROJECTS SECTION (two cards)
+  ========================================================== -->
+  <section class="section section-alt" id="projects">
+    <div class="container">
+      <p class="section-eyebrow" data-aos="fade-up">Projects</p>
+      <h2 class="section-title" data-aos="fade-up">Things I've built</h2>
+
+      <div class="projects-grid">
+        <!-- Replace project 1 details/image/links -->
+        <div class="project-card" data-aos="fade-up">
+          <div class="project-image">
+            <img src="https://placehold.co/500x300/0d1420/38bdf8?text=Portfolio+Website" alt="Portfolio website project screenshot">
+            <div class="project-overlay">
+              <a href="#" class="icon-btn" aria-label="View code on GitHub"><i class="fa-brands fa-github"></i></a>
+              <a href="#" class="icon-btn" aria-label="View live demo"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+          </div>
+          <div class="project-body">
+            <h3>Portfolio Website</h3>
+            <p>A personal portfolio built to teach HTML, CSS and JavaScript fundamentals through a real project.</p>
+            <div class="tech-tags">
+              <span>HTML</span><span>CSS</span><span>JavaScript</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="btn btn-small btn-outline"><i class="fa-brands fa-github"></i> GitHub</a>
+              <a href="#" class="btn btn-small btn-primary">Live Demo <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Replace project 2 details/image/links -->
+        <div class="project-card" data-aos="fade-up" data-aos-delay="150">
+          <div class="project-image">
+            <img src="https://placehold.co/500x300/0d1420/22d3ee?text=E-Commerce+Website" alt="E-commerce website project screenshot">
+            <div class="project-overlay">
+              <a href="#" class="icon-btn" aria-label="View code on GitHub"><i class="fa-brands fa-github"></i></a>
+              <a href="#" class="icon-btn" aria-label="View live demo"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+          </div>
+          <div class="project-body">
+            <h3>E-Commerce Website</h3>
+            <p>A responsive storefront layout with product cards, cart UI and a checkout mockup.</p>
+            <div class="tech-tags">
+              <span>HTML</span><span>CSS</span><span>JavaScript</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="btn btn-small btn-outline"><i class="fa-brands fa-github"></i> GitHub</a>
+              <a href="#" class="btn btn-small btn-primary">Live Demo <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       8. SKILLS SECTION (exactly 6 skills)
+  ========================================================== -->
+  <section class="section" id="skills">
+    <div class="container">
+      <p class="section-eyebrow" data-aos="fade-up">Skills</p>
+      <h2 class="section-title" data-aos="fade-up">My toolkit</h2>
+
+      <div class="skills-grid">
+        <div class="skill-card" data-aos="fade-up" data-aos-delay="0">
+          <div class="skill-top"><i class="fa-brands fa-html5"></i><span>HTML</span><b>90%</b></div>
+          <div class="skill-bar"><div class="skill-fill" data-percent="90"></div></div>
+        </div>
+        <div class="skill-card" data-aos="fade-up" data-aos-delay="50">
+          <div class="skill-top"><i class="fa-brands fa-css3-alt"></i><span>CSS</span><b>85%</b></div>
+          <div class="skill-bar"><div class="skill-fill" data-percent="85"></div></div>
+        </div>
+        <div class="skill-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="skill-top"><i class="fa-brands fa-js"></i><span>JavaScript</span><b>75%</b></div>
+          <div class="skill-bar"><div class="skill-fill" data-percent="75"></div></div>
+        </div>
+        <div class="skill-card" data-aos="fade-up" data-aos-delay="150">
+          <div class="skill-top"><i class="fa-brands fa-python"></i><span>Python</span><b>88%</b></div>
+          <div class="skill-bar"><div class="skill-fill" data-percent="88"></div></div>
+        </div>
+        <div class="skill-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="skill-top"><i class="fa-solid fa-database"></i><span>SQL</span><b>92%</b></div>
+          <div class="skill-bar"><div class="skill-fill" data-percent="92"></div></div>
+        </div>
+        <div class="skill-card" data-aos="fade-up" data-aos-delay="250">
+          <div class="skill-top"><i class="fa-solid fa-chart-simple"></i><span>Power BI</span><b>80%</b></div>
+          <div class="skill-bar"><div class="skill-fill" data-percent="80"></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       9. RESUME SECTION
+  ========================================================== -->
+  <section class="section section-alt" id="resume">
+    <div class="container">
+      <div class="resume-card glass" data-aos="zoom-in">
+        <i class="fa-solid fa-file-lines resume-icon"></i>
+        <h2>Want the full picture?</h2>
+        <p>Download my complete resume as a PDF — education, experience and skills in one place.</p>
+        <!-- Replace resume/resume.pdf with your own file -->
+        <a href="resume/resume.pdf" download class="btn btn-primary">
+          <i class="fa-solid fa-download"></i> Download Resume
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       10. CONTACT SECTION
+  ========================================================== -->
+  <section class="section" id="contact">
+    <div class="container">
+      <p class="section-eyebrow" data-aos="fade-up">Contact</p>
+      <h2 class="section-title" data-aos="fade-up">Let's build something</h2>
+
+      <div class="contact-grid">
+        <div class="contact-info" data-aos="fade-right">
+          <!-- Replace with your own contact details -->
+          <div class="contact-info-item">
+            <i class="fa-solid fa-envelope"></i>
+            <div><span>Email</span><p>kaushaindra.dummy@example.com</p></div>
+          </div>
+          <div class="contact-info-item">
+            <i class="fa-solid fa-phone"></i>
+            <div><span>Phone</span><p>+91 90000 00000</p></div>
+          </div>
+          <div class="contact-info-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <div><span>Location</span><p>Rewari, Haryana, India</p></div>
+          </div>
+
+          <div class="map-placeholder">
+            <i class="fa-solid fa-map-location-dot"></i>
+            <span>Google Map Placeholder — embed your map iframe here</span>
+          </div>
+        </div>
+
+        <form class="contact-form glass" id="contactForm" data-aos="fade-left" novalidate>
+          <div class="form-group">
+            <input type="text" id="nameInput" required placeholder=" ">
+            <label for="nameInput">Your Name</label>
+            <span class="error-msg">Please enter your name</span>
+          </div>
+          <div class="form-group">
+            <input type="email" id="emailInput" required placeholder=" ">
+            <label for="emailInput">Your Email</label>
+            <span class="error-msg">Please enter a valid email</span>
+          </div>
+          <div class="form-group">
+            <input type="tel" id="phoneInput" placeholder=" ">
+            <label for="phoneInput">Phone (optional)</label>
+          </div>
+          <div class="form-group">
+            <textarea id="messageInput" rows="4" required placeholder=" "></textarea>
+            <label for="messageInput">Your Message</label>
+            <span class="error-msg">Please enter a message</span>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">
+            <span>Send Message</span> <i class="fa-solid fa-paper-plane"></i>
+          </button>
+
+          <div class="form-success" id="formSuccess">
+            <i class="fa-solid fa-circle-check"></i>
+            <p>Message sent! (This is a demo — no email is actually sent.)</p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       11. SOCIAL MEDIA SECTION
+  ========================================================== -->
+  <section class="social-section">
+    <div class="container">
+      <p class="section-eyebrow center" data-aos="fade-up">Find me online</p>
+      <div class="social-icons" data-aos="fade-up">
+        <!-- Replace # with your own profile links -->
+        <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       12. FLOATING WHATSAPP BUTTON
+  ========================================================== -->
+  <!-- Replace # with https://wa.me/91XXXXXXXXXX -->
+  <a href="#" class="whatsapp-float" aria-label="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <!-- =========================================================
+       13. AI ASSISTANT FLOATING BUTTON (dummy functionality)
+  ========================================================== -->
+  <div class="ai-assistant" id="aiAssistant">
+    <div class="ai-popup" id="aiPopup">Need help? 👋</div>
+    <button class="ai-btn" id="aiBtn" aria-label="Open AI assistant">
+      <i class="fa-solid fa-robot"></i>
+    </button>
+  </div>
+
+  <!-- =========================================================
+       14. FOOTER
+  ========================================================== -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <a href="#home" class="logo">KK<span class="logo-dot">.</span></a>
+
+      <nav class="footer-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="social-icons small">
+        <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+      </div>
+    </div>
+    <p class="footer-copy">&copy; <span id="year"></span> Kaushaindra Kumar. Built for teaching purposes — Technoglobe Rewari.</p>
+
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+      <i class="fa-solid fa-arrow-up"></i>
+    </button>
+  </footer>
+
+  <!-- ================= AOS SCRIPT ================= -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.js"></script>
+  <!-- ================= OUR OWN SCRIPT ================= -->
+  <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,214 @@
+/* =====================================================================
+   RESPONSIVE.CSS
+   Kept separate from style.css on purpose — this makes it easy for
+   beginners to find and edit ONLY the responsive rules without
+   scrolling through the whole design system.
+
+   Breakpoints used:
+   1440px -> large desktops (slightly tighter container)
+   1024px -> laptops / small desktops
+   768px  -> tablets
+   480px  -> mobile phones
+===================================================================== */
+
+/* ---------------------- LAPTOPS (<=1024px) ---------------------- */
+@media (max-width: 1024px) {
+  :root {
+    --section-padding: 80px;
+  }
+
+  .hero-heading {
+    font-size: 42px;
+  }
+
+  .hero-inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero-desc {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .hero-image {
+    margin-top: 60px;
+  }
+
+  .about-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-stats {
+    max-width: 460px;
+    margin: 0 auto;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ---------------------- TABLETS (<=768px) ---------------------- */
+@media (max-width: 768px) {
+  /* Hamburger menu takes over navigation */
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 100vh;
+    width: min(300px, 80%);
+    background: rgba(10, 14, 23, 0.97);
+    backdrop-filter: blur(16px);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    transition: right 0.4s ease;
+    border-left: 1px solid var(--surface-border);
+  }
+
+  .nav-links.open {
+    right: 0;
+  }
+
+  .navbar-actions .btn-outline.btn-small {
+    display: none; /* hide the resume button in the top bar on small screens to save space */
+  }
+
+  .hero-heading {
+    font-size: 34px;
+  }
+
+  .hero-typing {
+    font-size: 18px;
+  }
+
+  .hero-photo-ring {
+    width: 260px;
+    height: 260px;
+  }
+
+  .floating-card {
+    padding: 10px 14px;
+  }
+
+  .card-1 { left: 0; top: -4%; }
+  .card-2 { right: 0; bottom: -4%; }
+
+  .section-title {
+    font-size: 28px;
+  }
+
+  .experience-card {
+    flex-direction: column;
+    padding: 28px;
+  }
+
+  .experience-card-top {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* ---------------------- MOBILE PHONES (<=480px) ---------------------- */
+@media (max-width: 480px) {
+  .container {
+    padding: 0 18px;
+  }
+
+  .hero-heading {
+    font-size: 28px;
+  }
+
+  .eyebrow {
+    font-size: 11px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-buttons .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .about-stats {
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+
+  .stat-card h3 {
+    font-size: 26px;
+  }
+
+  .timeline {
+    padding-left: 20px;
+  }
+
+  .timeline-item {
+    padding-left: 26px;
+  }
+
+  .timeline-dot {
+    left: -37px;
+    width: 28px;
+    height: 28px;
+    font-size: 12px;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-form {
+    padding: 24px;
+  }
+
+  .resume-card {
+    padding: 36px 22px;
+  }
+
+  .social-icons a {
+    width: 44px;
+    height: 44px;
+    font-size: 16px;
+  }
+
+  .whatsapp-float,
+  .ai-btn {
+    width: 50px;
+    height: 50px;
+    font-size: 21px;
+  }
+
+  .back-to-top {
+    right: 12px;
+    width: 44px;
+    height: 44px;
+  }
+}
